@@ -1,4 +1,4 @@
-# Postup při vypracování case study
+# Postup při vypracování Case study
 
 Tento soubor slouží jako popis postupu při vypracování Case Study. Pokud byl nějaký kód repetitivní, je zde uveden jen na jednom příkladu. Kompletní skript najdete [zde](https://github.com/AndreaMaratova/CRM-Analytik-Case-Study/blob/main/skript.sql). 
 
@@ -95,7 +95,7 @@ where zakaznik_id is null
 
 
 
-Vzhledem k charakteru dat a cíli case study jsem se u čištění dat rozhodla postupovat následovně:
+Vzhledem k charakteru dat a cíli Case study jsem se u čištění dat rozhodla postupovat následovně:
 
 a) Data, u kterých chybí *zakaznik_id* - smazat
 
@@ -108,7 +108,7 @@ c) Data, u kterých chybí *castka* - ponechat a vložit 0.
 - Jelikož hlavním cílem této Case Study je retenční analýza založená na počtu zákazníků, mnou vložená 0 nijak tuto statistiku neovlivňuje, jelikož je důležité to, že zákazník provedl další objednávku, nikoli její hodnota. Pokud bychom chtěli dělat jiné analýzy, pak by se k chybějícím datům mohlo přistupovat jinak např. nahrazením chybějící hodnoty průměrem všech částek nebo jejich odstraněním.
 
 d) Ve sloupci *castka* se objevují i záporné hodnoty. Ty považuji za vratky - smazat
-- Opět vzhledem k charakteru case study jsem se rozhodla pro toto řešení. Za jiných okolností by se data mazat nemusela.
+- Opět vzhledem k charakteru Case study jsem se rozhodla pro toto řešení. Za jiných okolností by se data mazat nemusela.
 
 e) Ve sloupci *castka* jsem změnila , za .
 
@@ -321,7 +321,7 @@ select count(1) from vw_orders_all; # 2 870 záznamů = 948 (CZ) + 955 (SK) + 96
 
 ## 3. Vytvoření skriptu pro výpočet kohorty
 
-#### 1. Nejprve jsem vytvořila základ pro správný výpočet kohorty. Aby bylo možné v reportu jednodušše filtrovat, jsou data uvedena jak po jednotlivých zemích, tak i jako celek za všechny 3 země. 
+#### 1. Nejprve jsem vytvořila základ pro správný výpočet kohorty. Aby bylo možné v reportu jednoduše filtrovat, jsou data uvedena jak po jednotlivých zemích, tak i jako celek za všechny 3 země. 
 
 ```sql
 with obj as (
